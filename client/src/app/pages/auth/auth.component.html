@@ -1,0 +1,23 @@
+<div class="auth">
+  <div class="auth__head">
+    <h1 class="auth__title">Авторизация</h1>
+  </div>
+  <div #authCard class="auth__card">
+    <div class="auth__login login">
+      <h2 class="login__title">Вход</h2>
+      <input class="login__field" type="text" placeholder="Логин">
+      <input class="login__field" type="password" placeholder="Пароль">
+      <button class="login__button">Войти</button>
+      <a (click)="authCard.classList.add('sign-up')" class="login__link">Нет аккаунта</a>
+    </div>
+    <div class="auth__signup signup">
+      <h2 class="signup__title">Регистрация</h2>
+      <input class="signup__field" type="text" placeholder="Никнейм">
+      <input class="signup__field" type="text" placeholder="Логин">
+      <input class="signup__field" type="password" placeholder="Пароль">
+      <input class="signup__field" type="password" placeholder="Пароль ещё раз">
+      <button class="signup__button">Зарегестрироваться</button>
+      <a (click)="authCard.classList.remove('sign-up')" class="signup__link">Есть аккаунт</a>
+    </div>
+  </div>
+</div>

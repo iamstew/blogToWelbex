@@ -1,0 +1,151 @@
+.profile{
+  &__title{
+    margin-bottom: 3rem;
+  }
+  &__card{
+    padding: 3rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem #d2d2d2;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: all .2s linear;
+    gap: 3rem;
+  }
+  &__image{
+    background-color: #b7b7b7;
+    border-radius: .5rem;
+    width: 9rem;
+    aspect-ratio: 1;
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__nickname{
+    font-size: 1.25rem;
+    padding: .25rem 0;
+  }
+  &__bottom{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  &__exit{
+    cursor: pointer;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    background: #fff;
+    transition: all .1s linear;
+    &:hover{
+      background-color: #eee;
+    }
+  }
+  .my-entries{
+    &__head{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 1.5rem 0;
+    }
+    &__new{
+      cursor: pointer;
+      width: 2rem;
+      aspect-ratio: 1;
+      border-radius: .5rem;
+      background: #fff;
+      transition: all .1s linear;
+      &:hover{
+        background-color: #eee;
+      }
+    }
+    &__list{
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 3rem;
+      gap: 3rem;
+    }
+    .entry{
+      width: 100%;
+      box-shadow: 0 0 10px #d7d7d7;
+      border-radius: .5rem;
+      overflow: hidden;
+      &__title{
+        margin-bottom: .5rem;
+        border-radius: .5rem;
+        transition: all .2s linear;
+      }
+      &__wrapper{
+        padding: 1rem 2rem;
+      }
+      &__image{
+        width: 100%;
+        // aspect-ratio: 2/1;
+      }
+      &__text{
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+        border-radius: .5rem;
+        transition: all .2s linear;
+      }
+
+      &__bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.875rem;
+        color: #b7b7b7;
+      }
+      .actions{
+        display: flex;
+        &__read-more{
+          cursor: pointer;
+          color: #fff;
+          background-color: #8fc777;
+          padding: 0 .75rem;
+          border-radius: .5rem;
+        }
+
+        &__edit, &__delete, &__confirm, &__cancel{
+          cursor: pointer;
+          width: 2rem;
+          aspect-ratio: 1;
+          border-radius: .5rem;
+          background: #fff;
+          transition: all .1s linear;
+          &:hover{
+            background-color: #eee;
+          }
+        }
+        &__read-more, &__edit, &__confirm{
+          margin-right: .5rem;
+        }
+        &__confirm{
+          color: #8fc777;
+          font-size: 1rem;
+          display: none;
+        }
+        &__cancel{
+          color: #e04203;
+          font-size: 1rem;
+          display: none;
+        }
+      }
+      &.editing{
+        .entry__title, .entry__text{
+          padding: .375rem;
+          outline: 1px solid #8fc777;
+        }
+        .actions__read-more, .actions__edit, .actions__delete{
+          display: none;
+        }
+        .actions__confirm, .actions__cancel{
+          display: block;
+        }
+      }
+    }
+  }
+}

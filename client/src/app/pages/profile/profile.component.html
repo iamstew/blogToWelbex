@@ -1,0 +1,50 @@
+<div class="profile">
+  <h1 class="profile__title">Профиль</h1>
+  <div class="profile__card">
+    <img class="profile__image" src="" alt="">
+    <div class="profile__wrapper">
+      <p class="profile__nickname">Lorem ipsum</p>
+      <button class="profile__exit">Выйти</button>
+    </div>
+  </div>
+  <div class="my-entries">
+    <div class="my-entries__head">
+      <h2 class="my-entries__title">Мои записи</h2>
+      <button routerLink="/profile/new-entry" class="my-entries__new" title="Добавить запись">
+        <i class="fa-solid fa-plus my-entries__new-icon"></i>
+      </button>
+    </div>
+
+    <div *ngIf="!myEntries.length" class="my-entries__empty">
+      <p class="my-entries__empty-text">У вас нет записей</p>
+    </div>
+
+    <div *ngIf="myEntries" class="my-entries__list">
+      <div #entry *ngFor="let id of myEntries" class="my-entries__list-item entry">
+        <img src="assets/images/lorem.png" alt="" class="entry__image">
+        <div class="entry__wrapper">
+          <h3 #title class="entry__title">Lorem ipsum dolor sit</h3>
+          <p #text class="entry__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, corrupti. Dolores odio in debitis magnam hic, cum, rerum unde voluptate illo explicabo vitae numquam quos asperiores minus, fugit maiores placeat officiis saepe. Laudantium earum adipisci officiis fuga possimus est repellat libero veritatis? Culpa nobis officia delectus qui vero quo? Voluptate architecto laboriosam doloremque tempore sapiente nam labore nihil praesentium quia adipisci quod quibusdam debitis ut a qui, quidem enim voluptatum magni vitae magnam? Dolore porro nam amet repellendus laboriosam, sequi, alias facere vero inventore earum aliquam? Nemo rerum, quos veritatis illum hic, placeat sapiente quam officiis corrupti, a deserunt dignissimos fugit quas! Reiciendis voluptas est culpa omnis numquam ut nostrum incidunt vero id autem inventore nam similique ducimus nulla iste minus laudantium, voluptate totam. Vitae placeat sequi iusto, totam illum quidem iste aliquid officiis incidunt perspiciatis exercitationem dolor laborum libero commodi culpa officia eligendi magni a minus quam id? Non?</p>
+          <div class="entry__bottom">
+            <div class="entry__bottom-actions actions">
+              <!-- <button routerLink="/entry/{{id}}" class="actions__read-more">Читать далее</button> -->
+              <button (click)="editEntry(text, title, entry)" class="actions__edit" title="Редактировать">
+                <i class="fa-solid fa-pen actions__edit-icon"></i>
+              </button>
+              <button (click)="deleteEntry()" class="actions__delete" title="Удалить">
+                <i class="fa-solid fa-trash actions__edit-icon"></i>
+              </button>
+              <button (click)="confirmEdit(text, title, entry)" class="actions__confirm" title="Сохранить">
+                <i class="fa-solid fa-check actions__edit-icon"></i>
+              </button>
+              <button (click)="cancelEdit(text, title, entry)" class="actions__cancel" title="Отменить">
+                <i class="fa-solid fa-ban actions__edit-icon"></i>
+              </button>
+            </div>
+            <p class="entry__time">Week ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="create">
+  <h1 class="create__title">Новая запись</h1>
+  <div class="create__card">
+    <div class="create__card-image image">
+      <input (change)="onFileSelected($event)" class="image__input" id="image" type="file" accept="image/png, image/jpeg, image/jpg">
+      <span #imageText class="image__text">{{fileName || "Файл не выбран"}}</span>
+      <label class="image__button" for="image">Выбрать фото</label>
+    </div>
+    <h2 contenteditable="true" class="create__card-title"></h2>
+    <p #text contenteditable="true" class="create__card-text"></p>
+    <button class="create__card-publish">Опубликовать</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div [ngClass]="{'sidebar': true, 'hide': hideSidebar}">
+  <button (click)="hideSidebar = !hideSidebar" class="sidebar__toggle">
+    <i class="fa-solid fa-arrow-left sidebar__toggle-icon"></i>
+  </button>
+  <a routerLink="/" class="sidebar__logo">
+    <i class="fa-solid fa-blog sidebar__logo-icon"></i>
+  </a>
+  <a *ngIf="!isAuth" routerLink="/profile" class="sidebar__link">
+    <i class="fa-solid fa-user sidebar__link-icon"></i>
+    <p class="sidebar__link-text">Профиль</p>
+  </a>
+  <a *ngIf="!isAuth" routerLink="/auth" class="sidebar__link">
+    <i class="fa-solid fa-right-to-bracket sidebar__link-icon"></i>
+    <p class="sidebar__link-text">Войти</p>
+  </a>
+  <a routerLink="/" class="sidebar__link">
+    <i class="fa-solid fa-newspaper sidebar__link-icon"></i>
+    <p class="sidebar__link-text">Лента</p>
+  </a>
+</div>
